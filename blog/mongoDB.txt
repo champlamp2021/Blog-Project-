@@ -1,0 +1,80 @@
+show databases
+Product     73.7 kB
+Student      147 kB
+TutorialDB  73.7 kB
+admin        115 kB
+config       111 kB
+local       73.7 kB
+
+
+
+1.สร้าง databases
+    use mongo_db
+    'already on db mongo_db'
+
+2.สร้าง collections
+สร้าง collections ชื่อ users
+
+    db.createCollection("users")
+{ ok: 1 }
+สร้าง collections ชื่อ  product
+    db.createCollection("product")  
+{ ok: 1 }
+สร้าง collections ชื่อ  employees
+    db.createCollection("employees")
+{ ok: 1 }
+
+/*show collections
+show collections
+employee
+
+/*renameCollection
+db.employee.renameCollection("employees")
+{ ok: 1 }
+
+/*show collections
+show collections
+employees
+
+/*delete collection
+db.employees.drop()
+true
+-----------------------------------------------------------------------
+การเพิ่มข้อมูล Document เข้าไปใน collections
+insertOne ( )
+db.ชื่อcollection.insertOne({document})
+--------------------------------------------
+use mongo_db
+'switched to db mongo_db'
+
+db.employees.insertOne({firstname:"natthaphong",lastname:"thammabut",age:25,email:"natthaphong25391@gmail.com"})
+{ acknowledged: true,
+  insertedId: ObjectId("614ad565927fa7e19ebcc716") }
+
+db.employees.insertOne({firstname:"tanyarat",lastname:"namyong",age:25,email:"tanyarat@gmail.com"})
+{ acknowledged: true,
+  insertedId: ObjectId("614ad6e4927fa7e19ebcc717") }
+
+-----------------------------------------------------------------------
+ดูข้อมูล
+db.employees.find()
+{ _id: ObjectId("614ad565927fa7e19ebcc716"),
+  firstname: 'natthaphong',
+  lastname: 'thammabut',
+  age: 25,
+  email: 'natthaphong25391@gmail.com' }
+{ _id: ObjectId("614ad6e4927fa7e19ebcc717"),
+  firstname: 'tanyarat',
+  lastname: 'namyong',
+  age: 25,
+  email: 'tanyarat@gmail.com' }
+  ดูข้อมูล
+  
+=======================================================================
+
+
+
+
+
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
